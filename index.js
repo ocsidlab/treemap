@@ -1,5 +1,5 @@
 var MapboxClient = require('mapbox/lib/services/datasets');
-var dataset = 'ciotrgzko002ew8m29jh4lvhf';
+var dataset = 'cip0lqsk4001s7nlwogm8rzeo';
 var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/planemad/' + dataset + '/';
 var mapboxAccessDatasetToken = 'sk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2lvdHNnd2xmMDBjb3VvbThmaXlsbnd5dCJ9.7Ui7o2K3U6flUzDGvYNZJw';
 var mapbox = new MapboxClient(mapboxAccessDatasetToken);
@@ -10,9 +10,9 @@ var _tmp = {};
 mapboxgl.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/planemad/cinpwopfb008hcam0mqxbxwuq', //stylesheet location
-    center: [-122.4310, 37.7638], // starting position
-    zoom: 11, // starting zoom
+    style: 'mapbox://styles/planemad/cip0m8hzf0003dhmh432q7g2k', //stylesheet location
+    center: [77.64, 12.98], // starting position
+    zoom: 16, // starting zoom
     hash: true,
     attributionControl: false
 });
@@ -80,9 +80,9 @@ map.on('style.load', function(e) {
             }
 
             function overlayFeatureForm(feature) {
-                var formOptions = "<div class='radio-pill pill pad2y clearfix' style='width:350px'><input id='valid' type='radio' name='review' value='valid' checked='checked'><label for='valid' class='col4 button short icon check fill-green'>Valid</label><input id='redundant' type='radio' name='review' value='redundant'><label for='redundant' class='col4 button short icon check fill-mustard'>Redundant</label><input id='invalid' type='radio' name='review' value='invalid'><label for='invalid' class='col4 button icon short check fill-red'>Invalid</label></div>";
+                var formOptions = "<div class='radio-pill pill pad2y clearfix' style='width:350px'><input id='valid' type='radio' name='review' value='tree' checked='checked'><label for='tree' class='col4 button short icon check fill-green'>Tree</label><input id='plant' type='radio' name='review' value='plant'><label for='plant' class='col4 button short icon check fill-mustard'>plant</label><input id='sapling' type='radio' name='review' value='sapling'><label for='sapling' class='col4 button icon short check fill-red'>sapling</label></div>";
                 var formReviewer = "<fieldset><label>Reviewed by: <span id='reviewer' style='padding:5px;background-color:#eee'></span></label><input type='text' name='reviewer' placeholder='OSM username'></input></fieldset>"
-                var popupHTML = "<h3>" + restriction + "</h3><form>" + formOptions + formReviewer + "<a id='updateOverlayFeature' class='button col4' href='#'>Save</a><a id='deleteOverlayFeature' class='button quiet fr col4' href='#' style=''>Delete</a></form>";
+                var popupHTML = "<h3>Point Details</h3><form>" + formOptions + formReviewer + "<a id='updateOverlayFeature' class='button col4' href='#'>Save</a><a id='deleteOverlayFeature' class='button quiet fr col4' href='#' style=''>Delete</a></form>";
                 var popup = new mapboxgl.Popup()
                     .setLngLat(e.lngLat)
                     .setHTML(popupHTML)
@@ -96,7 +96,7 @@ map.on('style.load', function(e) {
                     newOverlayFeature["id"] = feature.properties["id"];
                     console.log(feature);
                 } else {
-                    newOverlayFeature.properties["name"] = restriction;
+                    newOverlayFeature.properties["natural"] = "tree";
                     newOverlayFeature.geometry.coordinates = e.lngLat.toArray();
                 }
 
