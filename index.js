@@ -17,7 +17,7 @@ var map = new mapboxgl.Map({
     attributionControl: false
 });
 
-map.addControl(new mapboxgl.Geolocate({position: 'bottom-right'})); 
+map.addControl(new mapboxgl.Geolocate({position: 'bottom-right'}));
 map.addControl(new mapboxgl.Navigation());
 
 
@@ -80,7 +80,7 @@ map.on('style.load', function(e) {
             }
 
             function overlayFeatureForm(feature) {
-                var formOptions = "<div class='radio-pill pill pad2y clearfix'><input id='valid' type='radio' name='review' value='tree' checked='checked'><label for='tree' class='col4 button short icon check fill-green'>tree</label><input id='plant' type='radio' name='review' value='plant'><label for='plant' class='col4 button short icon check fill-mustard'>plant</label><input id='sapling' type='radio' name='review' value='sapling'><label for='sapling' class='col4 button icon short check fill-red'>sapling</label></div>";
+                var formOptions = "<div class='radio-pill pill pad2y clearfix' style='width:350px;'><input id='valid' type='radio' name='review' value='tree' checked='checked'><label for='tree' class='col4 button short icon check fill-green'>tree</label><input id='plant' type='radio' name='review' value='plant'><label for='plant' class='col4 button short icon check fill-mustard'>plant</label><input id='sapling' type='radio' name='review' value='sapling'><label for='sapling' class='col4 button icon short check fill-red'>sapling</label></div>";
                 var formReviewer = "<fieldset><label>Contributed by: <span id='reviewer' style='padding:5px;background-color:#eee'></span></label><input type='text' name='reviewer' placeholder='name'></input></fieldset>"
                 var popupHTML = "<h3>Point Details</h3><form>" + formOptions + formReviewer + "<a id='updateOverlayFeature' class='button col4' href='#'>Save</a><a id='deleteOverlayFeature' class='button quiet fr col4' href='#' style=''>Delete</a></form>";
                 var popup = new mapboxgl.Popup()
