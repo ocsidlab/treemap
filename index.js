@@ -90,7 +90,7 @@ map.on('style.load', function(e) {
 
                 // Show existing status if available
                 if (feature) {
-                    $("input[name=review][value=" + feature.properties["status"] + "]").prop('checked', true);
+                    $("input[name=review][value=" + feature.properties["natural"] + "]").prop('checked', true);
                     $("#reviewer").html(feature.properties["reviewer"]);
                     newOverlayFeature = feature;
                     newOverlayFeature["id"] = feature.properties["id"];
