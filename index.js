@@ -1,7 +1,7 @@
 var MapboxClient = require('mapbox/lib/services/datasets');
-var dataset = 'cip0lqsk4001s7nlwogm8rzeo';
-var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/planemad/' + dataset + '/';
-var mapboxAccessDatasetToken = 'sk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiY2lvdHNnd2xmMDBjb3VvbThmaXlsbnd5dCJ9.7Ui7o2K3U6flUzDGvYNZJw';
+var dataset = 'cir7dk3oy0009ikmgv3elezvm';
+var DATASETS_BASE = 'https://api.mapbox.com/datasets/v1/theplanemad/' + dataset + '/';
+var mapboxAccessDatasetToken = 'sk.eyJ1IjoidGhlcGxhbmVtYWQiLCJhIjoiY2lyN2RobWgyMDAwOGlrbWdkbWp2cWdjNiJ9.AnPKx0Iqk-uzARdoOthoFg';
 var mapbox = new MapboxClient(mapboxAccessDatasetToken);
 
 var reviewer;
